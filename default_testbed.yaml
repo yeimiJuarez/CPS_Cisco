@@ -1,0 +1,26 @@
+testbed:
+    name: CPS_Testbed    
+    credentials:
+        default:
+            username: root
+            password: password
+        enable:
+            password: password
+
+devices:
+    lab2-cc01:
+        os: linux
+        connections:
+          defaults:
+            class: 'unicon.Unicon'
+          linux:
+            protocol: ssh
+            ip: 10.10.10.10
+            arguments:
+               connection_timeout: 120
+               prompt_recovery: True
+            settings:
+               CONSOLE_TIMEOUT: 600
+               EXEC_TIMEOUT: 300
+               CONFIG_TIMEOUT: 120
+        type: 'linux'
